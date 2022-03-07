@@ -1,0 +1,82 @@
+@use '../../sass/' as *
+
+.main
+    position: relative
+    background-color: $white-color
+    @media (min-width: $md2 + px)//More 992
+        @include adaptiv-value('padding-left', 70, -70, 1)
+    // @media (max-width: $md2 + px)//Less 992
+    padding-bottom: 40px
+    overflow: hidden
+    @media (max-width: $md4 + px)//Less 479
+       padding-bottom: 20px
+    // &::after
+    //     content: ''
+    //     position: absolute
+    //     top: 0
+    //     right: 0
+    //     width: 45%
+    //     height: 100%
+    //     background-color: $orange-color
+    //     @media (max-width: $md3 + px) //Less 768
+    //         width: 65%
+    //     @media (max-width: $md4 + px)//Less 479
+    //        left: 0
+    &__container
+        position: relative
+        z-index: 2
+        display: flex !important
+        padding-top: 20px
+        @media (max-width: $md3 + px) //Less 768
+           justify-content: center
+    &__content
+        @include flex(flex-start,center)
+        flex-direction: column
+        text-align: left
+        @media (min-width: $md3 + px)//More 768
+            flex: 0 1 50%
+    &__title
+        font-weight: bold
+        @include adaptiv-value('font-size', 75, 10, 1)
+        line-height: 127%
+        text-transform: uppercase
+        @media (max-width: $md2 + px)//Less 992
+           @include adaptiv-value('font-size', 55, 22, 1)
+        &:not(:last-child)
+            margin-bottom: 15px
+    &__subtitle
+        line-height: calc(31px/25px * 100%)
+        text-transform: capitalize
+        @include adaptiv-value('font-size', 25, 14, 1)
+        &:not(:last-child)
+            margin-bottom: 25px
+    &__decor
+        position: relative
+        @include flex(center,center)
+        @media (min-width: $md3 + px)//More 768
+            flex: 0 1 45%
+            // margin-bottom: -40px
+    &__img
+        z-index: 9
+        height: 80%
+        img
+            display: block
+            max-width: 100%
+            @media (max-width: $md3 + px) //Less 768
+               display: none
+    &__page
+        width: 46%
+        height: 100%
+        z-index: 1
+        right: 0
+        left: unset
+        .circle
+            @media (max-width: $md2 + px)//Less 992
+               display: none
+        .square_1,.square_3
+            @media (max-width: $md3 + px) //Less 768
+                   display: none !important
+        .square_2
+            @media (max-width: $md4 + px)//Less 479
+               gap: 10px
+               opacity: 0.8

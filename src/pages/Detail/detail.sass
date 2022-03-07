@@ -1,0 +1,182 @@
+@use '../../sass/' as *
+
+.detail
+    position: relative
+    z-index: 100
+    @include adaptiv-value('margin-top', 70, 15, 1)
+    &__container
+        @media (max-width: $md4 + px)//Less 479
+           padding: 0 10px !important
+    &__wrapper
+        display: flex
+        align-items: stretch
+        @media (max-width: $md2 + px)//Less 992
+           flex-direction: column
+    &__arrow
+        position: relative
+        @include adaptiv-value('margin-bottom', 55, 10, 1)
+        cursor: pointer
+        font-size: 60px !important
+        @media (max-width: $md2 + px)//Less 992
+           font-size: 40px !important
+    &__left
+        background: #fff
+        box-shadow: 0px 10px 10px rgba(154, 160, 185, 0.25)
+        @media (min-width: $md2 + px)//More 992
+            flex: 1 0 65%
+            @include adaptiv-value('margin-right', 40, 20, 1)
+    &__info
+    &__recommend
+        flex: 0 1 500px
+        display: flex
+        flex-direction: column
+        @media (max-width: $md2 + px) //Less 900
+            margin: 30px 0
+            display: grid
+            gap:20px
+            grid-template-columns: repeat(auto-fit, minmax(280px,1fr))
+        .book-card
+            max-width: 100% !important
+            // height: 100% !important
+            &:not(:last-child)
+                margin-bottom: 25px
+            @media (max-width: $md2 + px)//Less 992
+               &:not(:last-child)
+                   margin-bottom: 0
+            img
+                filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.2)) !important
+    &__more
+.info-detail
+    @include flex(unset,unset)
+    @media (max-width: $md4 + px)//Less 479
+       flex-direction: column
+    &__poster
+        flex: 0 0 40%
+        padding-bottom: 64%
+        @media (max-width: $md4 + px)//Less 479
+            padding-bottom: 159%
+        img
+            display: block !important
+            filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.2))
+    &__content
+        // padding: 35px
+        @include adaptiv-value('padding', 20, 10, 1)
+        padding-bottom: 0 !important
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        @media (max-width: $md4 + px)//Less 479
+           padding: 10px
+           padding-left: 12px
+    &__data
+    &__title
+        font-weight: 500
+        @include adaptiv-value('font-size', 40, 15, 1)
+        text-transform: capitalize
+        &:not(:last-child)
+            // margin-bottom: 25px
+            @include adaptiv-value('margin-bottom', 25, 15, 1)
+        @media (max-width: $md2 + px)//Less 992
+           @include adaptiv-value('font-size', 57, 22, 1)
+    &__detail
+        display: flex
+    &__info
+        line-height: calc(20px/16px * 100%)
+        text-transform: capitalize
+        color: rgba(0, 0, 0, 0.6)
+        span
+            color: $orange-color
+        &:first-child
+            margin-right: 25px
+    &__stars
+        @include adaptiv-value('margin-top', 15, 7, 1)
+        @include adaptiv-value('margin-bottom', 25, 10, 1)
+        color: rgba(0, 0, 0, 0.6)
+    &__btns
+        @include flex(center,flex-start)
+        flex-wrap: wrap
+        padding-top: 15px
+        gap: 10px
+        @media (max-width: $md4 + px)//Less 479
+           justify-content: flex-start
+        .btn
+            padding: 4px 15px
+            @include adaptiv-value('font-size', 25, 15, 1)
+        .btn-outline
+            padding: 4px 10px
+            @include adaptiv-value('font-size', 25, 15, 1)
+
+.more-detail
+    @include adaptiv-value('padding-top', 60, 0, 1)
+    @include adaptiv-value('padding-right', 35, 0, 1)
+    @include adaptiv-value('padding-bottom', 30, 0, 1)
+    @include adaptiv-value('padding-left', 40, 0, 1)
+    @media (max-width: $md3 + px) //Less 768
+       padding: 20px 10px 15px 15px
+    @media (max-width: $md4 + px)//Less 479
+       padding-left: 12px
+       padding-top: 30px
+    &__descr
+        & > * ~ *
+            margin-top: 25px
+            @media (max-width: $md4 + px)//Less 479
+               margin-top: 15px
+    &__title
+        font-weight: 400
+        font-size: 25px
+        line-height: 92%
+        letter-spacing: 0.003em
+    &__text
+        font-family: 'Rambla', sans-serif
+        line-height: 162%
+        letter-spacing: 0.004em
+        color: rgba(0, 0, 0, 0.6)
+    &__genres
+        display: flex
+        flex-wrap: wrap
+        @include adaptiv-value('gap', 14, 10, 1)
+    &__genre
+        padding: 8px 25px
+        background: #DEDEDE
+        border-radius: 10px
+        line-height: 144%
+        letter-spacing: 0.003em
+        color: rgba(0, 0, 0, 0.3)
+        @media (max-width: $md4 + px)//Less 479
+           padding: 4px 12px
+           font-size: 14px
+    &__addition
+        margin-top: 60px
+        @media (max-width: $md4 + px)//Less 479
+           margin-top: 40px
+    &__options
+        margin-top: 20px
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: 40px
+        @media (max-width: $md3 + px) //Less 768
+            grid-template-columns: repeat(2,1fr)
+            @include adaptiv-value('gap', 40, 20, 1)
+        @media (max-width: $md4 + px)//Less 479
+           display: flex
+           flex-direction: column
+    &__option
+    &__subtitle
+        margin-bottom: 10px
+        line-height: calc(20px/16px * 100%)
+        text-transform: capitalize
+        color: rgba(0, 0, 0, 0.6)
+        @media (max-width: $md4 + px)//Less 479
+           font-size: 15px
+        @media (max-width: $md4 + px)//Less 479
+            margin-bottom: 3px
+    &__info
+        line-height: calc(20px/16px * 100%)
+        text-transform: capitalize
+        color: rgba(0, 0, 0, 0.3)
+        @media (max-width: $md4 + px)//Less 479
+           font-size: 14px
+
+.disable
+    opacity: 0.5 !important
+    pointer-events: none !important

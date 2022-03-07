@@ -1,0 +1,58 @@
+@use '../../sass/' as *
+
+.skeleton
+    position: relative
+    display: flex
+    width: 100%
+    padding: 9px 6px
+    border-radius: 0px 10px 10px 0px
+    overflow: hidden
+    background-color: $white-color
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        width: 15px
+        height: 100%
+        filter: blur(30px)
+        opacity: 0.8
+        background: #5e5e5e
+        animation: load 1s linear infinite
+    &__poster
+        flex: 0 1 147px
+        height: 225px
+        background-color: $skeleton-color
+        animation: loadOp 0.5s linear infinite alternate
+    &__content
+        flex: 0 1 70%
+        height: 100%
+        margin-left: 5px
+        background-color: $white-color
+        border-radius: 0px 10px 10px 0px
+    &__title
+        height: 60px
+        background-color: $skeleton-color
+        border-radius: 0px 10px 0px 0px
+        animation: loadOp 0.5s linear infinite alternate
+    &__text
+        margin-top: 20px
+        // height: 64.1%
+        height: 145px
+        background-color: $skeleton-color
+        border-radius: 0px 0px 10px 0px
+        animation: loadOp 0.5s linear infinite alternate
+
+
+@keyframes load
+    0%
+        left: 0
+    100%
+        left: 110%
+
+@keyframes loadOp
+    0%
+        opacity: 1
+    100%
+        opacity: 0.3

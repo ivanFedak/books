@@ -1,0 +1,38 @@
+@use '../../sass/' as *
+
+.blog
+    @include adaptiv-value('margin-top', 75, 20, 1)
+    @include adaptiv-value('margin-bottom', 90, 30, 1)
+    &__container
+    &__grid
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(296.26px,1fr))
+        @include adaptiv-value('gap', 25, 15, 1)
+        @media (max-width: $md3 + px) //Less 768
+            grid-template-columns: repeat(auto-fill, minmax(240px,1fr))
+           
+    &__item
+
+.item-blog
+    background: $white-color
+    border: 1px solid #DEDEDE
+    border-radius: 5px
+    &__img
+        padding-bottom: 90%
+    &__content
+        @include adaptiv-value('padding-top', 35, 15, 1)
+        @include adaptiv-value('padding-bottom', 60, 20, 1)
+        @include adaptiv-value('padding-left', 52, 5, 1)
+        @include adaptiv-value('padding-right', 52, 5, 1)
+    &__title
+        font-weight: 500
+        @include adaptiv-value('font-size', 25, 20, 1)
+        line-height: 120%
+        text-align: center
+        text-transform: capitalize
+        @include adaptiv-value('margin-bottom', 20, 10, 1)
+    &__descr
+        line-height: 188%
+        text-align: center
+        text-transform: capitalize
+        @include adaptiv-value('font-size', 16, 14, 1)

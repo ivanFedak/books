@@ -1,0 +1,32 @@
+@use '../../sass/' as *
+
+.btn
+    padding: 4px 25px
+    background-color: $orange-color
+    color: $white-color
+    font-weight: 500
+    font-size: 25px
+    line-height: calc(30px/25px * 100%)
+    text-transform: capitalize
+    border-radius: 10px
+    border: 1px solid $orange-color
+    transition: all 0.3s ease 0s
+    @media (any-hover: hover)
+        &:hover
+            color: $orange-color
+            background: transparent
+.btn-outline
+    padding: 4px 13px
+    background: transparent
+    font-weight: 500
+    font-size: 25px
+    line-height: calc(30px/25px * 100%)
+    text-transform: capitalize
+    color: $orange-color
+    border: 1px solid $orange-color
+    border-radius: 10px
+    transition: all 0.3s ease 0s
+    @media (any-hover: hover)
+        &:hover
+            color: $white-color
+            background-color: $orange-color

@@ -1,0 +1,32 @@
+@use '../../sass/' as *
+
+.footer
+    padding: 31px 0
+    background-color: $orange-color
+    &__container
+        @include flex(baseline,flex-end)
+        @media (max-width: $md2 + px)//Less 992
+           justify-content: space-between
+        @media (max-width: $md4 + px)//Less 479
+           flex-direction: column
+           justify-content: center
+           align-items: center
+    &__logo
+        color: $white-color
+        font-size: 16px
+        line-height: calc(19px/16px * 100%)
+        @media (min-width: $md2 + px)//More 992
+            margin-right: 390px
+        @media (max-width: $md4 + px)//Less 479
+           margin-bottom: 10px
+        span
+            font-size: 16px
+    &__menu
+        display: flex
+        flex-wrap: wrap
+        & > * 
+            padding: 0 20px
+    &__item
+        font-weight: 500
+        color: $white-color
+        cursor: pointer

@@ -1,0 +1,64 @@
+@use '../../sass/' as *
+
+.book-card
+    position: relative
+    display: flex
+    width: 100%
+    padding: 9px 6px
+    background: $white-color
+    border: 0.5px solid #DEDEDE
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05)
+    border-radius: 0px 10px 10px 0px
+    &__poster
+        flex: 0 1 147px
+        height: 225px
+        img
+            object-fit: cover
+            height: 100%
+            max-width: 100%
+    &__content
+        flex: 0 1 70%
+        padding-left: 5px
+    &__title
+        font-size: 18px
+        line-height: 140%
+        font-weight: 400
+        text-transform: capitalize
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__author
+        font-size: 14px
+        line-height: calc(19px/16px * 100%)
+        text-transform: capitalize
+        color: rgba(0, 0, 0, 0.6)
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__rate
+        @include flex(center,space-between)
+        &:not(:last-child)
+            margin-bottom: 12px
+    &__stars
+        display: flex
+        flex-wrap: wrap
+    &__info
+        font-size: 14px
+        font-weight: 300
+        line-height: 100%
+        letter-spacing: 0.002em
+        color: rgba(0, 0, 0, 0.3)
+        &:first-child
+            padding-right: 5px
+    &__descr
+        font-size: 13px
+        font-family: 'Rambla', sans-serif
+        line-height: 156%
+        letter-spacing: 0.003em
+        color: rgba(0, 0, 0, 0.3)
+        &:not(:last-child)
+            margin-bottom: 18px
+    .btn
+.star
+    font-size: 14px
+    color: $orange-color
+.star-card
+    font-size: 12px !important

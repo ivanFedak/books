@@ -1,0 +1,37 @@
+@use '../../sass/' as *
+
+.search
+    display: flex
+    align-items: center
+    padding: 15px
+    background-color: $gray-color
+    border-radius: 10px
+    @media (min-width: $md2 + px)//More 992
+        width: 80%
+    @media (max-width: $md2 + px)//Less 992
+       width: 100%
+    @media (max-width: $md3 + px) //Less 768
+       padding: 12px 8px
+    @media (max-width: $md4 + px)//Less 479
+       padding: 8px
+
+    
+    &__icon
+        @media (max-width: $md4 + px)//Less 479
+           display: none !important
+    &__input
+        background: transparent
+        width: 100%
+        height: 100%
+        font-size: 16px !important
+        padding-right: 15px
+        line-height: calc(19px/16px * 100%)
+        &::placeholder
+            color: rgba(0, 0, 0, 0.3)
+    .btn
+        @media (max-width: $md2 + px)//Less 992
+           padding: 4px 12px
+           font-size: 22px
+        @media (max-width: $md4 + px)//Less 479
+           padding: 2px 10px
+           font-size: 18px
